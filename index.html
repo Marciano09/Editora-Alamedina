@@ -1,17 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editora Alamedina</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editora Alamedina | Catálogo Editorial</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
- <header>
-    <h1>Listado de Libros</h1>
-    <img src="1.webp" alt="Imagen del libro Apuntes Historia Alamedina">
-    <button> <a href="https://wa.me/50259215127" target="_blank">Comprar por whatsapp</a> </button>
-    <script src="script.js"></script>
- </header>
+
+<header class="encabezado">
+  <nav class="menu">
+    <h1>Editora Alamedina</h1>
+
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#catalogo">Catálogo</a></li>
+      <li><a href="#autores">Autores</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <section id="inicio" class="hero">
+    <h2>Catálogo Editorial</h2>
+    <p>Libros creados con identidad, memoria, educación y literatura.</p>
+  </section>
+</header>
+
+<main>
+
+  <section id="catalogo" class="catalogo">
+    <h2>Nuestros libros</h2>
+
+    <div class="buscador">
+      <input type="text" id="buscarLibro" placeholder="Buscar por título, autor, año o tema...">
+    </div>
+
+    <div class="grid-libros"></div>
+  </section>
+
+  <section id="autores" class="seccion">
+    <h2>Autores</h2>
+    <p>
+      Autores comprometidos con la educación, la literatura, la memoria histórica
+      y la cultura guatemalteca.
+    </p>
+  </section>
+
+  <section id="contacto" class="seccion contacto">
+    <h2>Contacto</h2>
+    <p>Para compras o consultas, escríbenos por WhatsApp.</p>
+
+    <a href="https://wa.me/50259215127" target="_blank">
+      Contactar por WhatsApp
+    </a>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Editora Alamedina. Todos los derechos reservados.</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

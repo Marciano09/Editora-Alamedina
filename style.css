@@ -1,11 +1,222 @@
-body {
-    text-align: center;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-img {
-    width: 100%;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  background: #f4f1eb;
+  color: #2c2c2c;
+}
+
+.encabezado {
+  background: linear-gradient(135deg, #111, #3a2f20);
+  color: white;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 8%;
+}
+
+.menu h1 {
+  font-size: 28px;
+  color: #d8b46a;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  color: #d8b46a;
+}
+
+.hero {
+  text-align: center;
+  padding: 90px 20px;
+}
+
+.hero h2 {
+  font-size: 48px;
+  color: #d8b46a;
+}
+
+.hero p {
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+.catalogo {
+  padding: 60px 8%;
+}
+
+.catalogo h2,
+.seccion h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #3a2f20;
+}
+
+.buscador {
+  max-width: 650px;
+  margin: 0 auto 40px auto;
+}
+
+.buscador input {
+  width: 100%;
+  padding: 16px 22px;
+  border: 2px solid #d8b46a;
+  border-radius: 30px;
+  font-size: 16px;
+  outline: none;
+  background: white;
+}
+
+.buscador input:focus {
+  box-shadow: 0 0 12px rgba(216, 180, 106, 0.5);
+}
+
+.grid-libros {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+
+.libro {
+  background: white;
+  padding: 22px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.libro:hover {
+  transform: translateY(-8px);
+}
+
+.libro img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  background: #ddd;
+}
+
+.libro h3 {
+  color: #3a2f20;
+  margin-bottom: 12px;
+  font-size: 22px;
+}
+
+.libro p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.libro .precio {
+  color: #8a641f;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.libro a,
+.contacto a {
+  display: inline-block;
+  margin-top: 15px;
+  background: #25D366;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.libro a:hover,
+.contacto a:hover {
+  background: #1ebe5d;
+}
+
+.seccion {
+  padding: 60px 8%;
+  text-align: center;
+  background: #fff;
+  margin-top: 20px;
+}
+
+.seccion p {
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.7;
+  font-size: 18px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #111;
+  color: white;
+}
+
+/* TABLET */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid-libros {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* CELULAR */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .hero {
+    padding: 70px 20px;
+  }
+
+  .hero h2 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .catalogo {
+    padding: 45px 6%;
+  }
+
+  .grid-libros {
+    grid-template-columns: 1fr;
+  }
+
+  .libro img {
     height: auto;
+  }
 }
