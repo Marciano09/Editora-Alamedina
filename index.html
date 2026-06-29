@@ -3,55 +3,156 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Editora Alamedina | Catálogo Editorial</title>
+  <title>Editora Alamedina | Catálogo Editorial Digital</title>
+  <meta name="description" content="Catálogo editorial digital de Editora Alamedina. Libros en formato PDF listos para adquirir por WhatsApp.">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="encabezado">
+<header class="encabezado" id="inicio">
   <nav class="menu">
-    <h1>Editora Alamedina</h1>
+    <a class="marca" href="#inicio">Editora Alamedina</a>
 
-    <ul>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      ☰
+    </button>
+
+    <ul id="menuLista">
       <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#proyecto">Proyecto</a></li>
+      <li><a href="#destacados">Destacados</a></li>
       <li><a href="#catalogo">Catálogo</a></li>
-      <li><a href="#autores">Autores</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
   </nav>
 
-  <section id="inicio" class="hero">
-    <h2>Catálogo Editorial</h2>
-    <p>Libros creados con identidad, memoria, educación y literatura.</p>
+  <section class="hero">
+    <div class="hero-contenido">
+      <span class="etiqueta-superior">Catálogo editorial digital</span>
+      <h1>Libros en formato PDF para leer desde cualquier lugar</h1>
+      <p>
+        Obras creadas con identidad, memoria, educación y literatura.
+        Publicaciones digitales de alta calidad, disponibles para compra directa por WhatsApp.
+      </p>
+
+      <div class="acciones-hero">
+        <a href="#catalogo" class="btn btn-principal">Ver catálogo</a>
+        <a href="https://wa.me/50259215127" target="_blank" class="btn btn-secundario">Consultar por WhatsApp</a>
+      </div>
+    </div>
   </section>
 </header>
 
 <main>
 
-  <section id="catalogo" class="catalogo">
-    <h2>Nuestros libros</h2>
+  <section id="proyecto" class="proyecto">
+    <div class="contenedor-dos-columnas">
+      <div>
+        <span class="subtitulo">Sobre el proyecto</span>
+        <h2>Una librería digital para preservar, compartir y difundir conocimiento</h2>
+        <p>
+          <strong>Editora Alamedina</strong> reúne obras literarias, educativas, históricas y culturales
+          en un catálogo digital accesible, moderno y fácil de consultar. El proyecto nace con el propósito
+          de acercar la lectura a más personas, apoyar a nuevos autores y conservar publicaciones con valor
+          académico, comunitario y artístico.
+        </p>
+        <p>
+          Todos los libros publicados en esta página se entregan en <strong>formato digital PDF</strong>,
+          listos para leerse en computadora, celular o tableta. Esto permite que cada lector pueda adquirir
+          su libro de forma rápida, segura y sin necesidad de envío físico.
+        </p>
+      </div>
 
-    <div class="buscador">
-      <input type="text" id="buscarLibro" placeholder="Buscar por título, autor, año o tema...">
+      <div class="tarjeta-pdf">
+        <h3>Formato de entrega</h3>
+        <p class="pdf-icono">PDF</p>
+        <ul>
+          <li>Entrega digital después de confirmar la compra.</li>
+          <li>Compatible con celulares, tabletas y computadoras.</li>
+          <li>Archivo de lectura clara y buena calidad visual.</li>
+          <li>Ideal para estudiantes, docentes y lectores en general.</li>
+        </ul>
+      </div>
     </div>
+  </section>
+
+  <section id="como-funciona" class="pasos">
+    <h2>¿Cómo funciona?</h2>
+
+    <div class="grid-pasos">
+      <article>
+        <span>1</span>
+        <h3>Explora</h3>
+        <p>Revisa el catálogo y encuentra el libro que más te interese.</p>
+      </article>
+
+      <article>
+        <span>2</span>
+        <h3>Consulta</h3>
+        <p>Presiona el botón Comprar por WhatsApp en el libro seleccionado.</p>
+      </article>
+
+      <article>
+        <span>3</span>
+        <h3>Adquiere</h3>
+        <p>Recibe atención personalizada y confirma tu compra.</p>
+      </article>
+
+      <article>
+        <span>4</span>
+        <h3>Lee</h3>
+        <p>Obtén tu libro digital en PDF y disfrútalo en tus dispositivos.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="destacados" class="destacados">
+    <div class="titulo-seccion">
+      <span class="subtitulo">Selección editorial</span>
+      <h2>Libros destacados</h2>
+      <p>Una muestra inicial de obras recomendadas dentro del catálogo.</p>
+    </div>
+
+    <div class="grid-destacados" id="gridDestacados"></div>
+  </section>
+
+  <section id="catalogo" class="catalogo">
+    <div class="titulo-seccion">
+      <span class="subtitulo">Catálogo completo</span>
+      <h2>Nuestros libros digitales</h2>
+      <p>Busca por título, autor, año, categoría o palabra clave.</p>
+    </div>
+
+    <div class="herramientas-catalogo">
+      <div class="buscador">
+        <input type="text" id="buscarLibro" placeholder="Buscar por título, autor, año o tema...">
+      </div>
+
+      <div class="filtros">
+        <button class="filtro activo" data-categoria="Todos">Todos</button>
+        <button class="filtro" data-categoria="Historia">Historia</button>
+        <button class="filtro" data-categoria="Literatura">Literatura</button>
+        <button class="filtro" data-categoria="Educación">Educación</button>
+        <button class="filtro" data-categoria="Poesía">Poesía</button>
+        <button class="filtro" data-categoria="Biografía">Biografía</button>
+      </div>
+    </div>
+
+    <div class="contador" id="contadorLibros"></div>
 
     <div class="grid-libros"></div>
   </section>
 
-  <section id="autores" class="seccion">
-    <h2>Autores</h2>
-    <p>
-      Autores comprometidos con la educación, la literatura, la memoria histórica
-      y la cultura guatemalteca.
-    </p>
-  </section>
-
   <section id="contacto" class="seccion contacto">
+    <span class="subtitulo">Compra directa</span>
     <h2>Contacto</h2>
-    <p>Para compras o consultas, escríbenos por WhatsApp.</p>
+    <p>
+      Para comprar un libro digital en PDF o solicitar información adicional,
+      escríbenos directamente por WhatsApp.
+    </p>
 
-    <a href="https://wa.me/50259215127" target="_blank">
+    <a href="https://wa.me/50259215127" target="_blank" class="btn-whatsapp">
       Contactar por WhatsApp
     </a>
   </section>
@@ -60,6 +161,7 @@
 
 <footer>
   <p>© 2026 Editora Alamedina. Todos los derechos reservados.</p>
+  <p>Catálogo editorial digital en formato PDF.</p>
 </footer>
 
 <script src="script.js"></script>
