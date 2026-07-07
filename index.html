@@ -164,6 +164,51 @@
   <p>Catálogo editorial digital en formato PDF.</p>
 </footer>
 
+
+<!-- Ventana emergente con lector de muestra PDF -->
+<div class="modal-libro" id="modalLibro" aria-hidden="true">
+  <div class="modal-overlay" id="modalOverlay"></div>
+
+  <div class="modal-contenido lector-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
+    <button class="modal-cerrar" id="modalCerrar" aria-label="Cerrar ventana">×</button>
+
+    <div class="modal-encabezado">
+      <span class="modal-etiqueta" id="modalEtiqueta"></span>
+      <h2 id="modalTitulo"></h2>
+      <p class="modal-autor" id="modalAutor"></p>
+
+      <div class="modal-datos">
+        <span id="modalCategoria"></span>
+        <span id="modalAnio"></span>
+        <span>Formato digital PDF</span>
+        <span>Muestra de lectura</span>
+      </div>
+
+      <p class="modal-precio" id="modalPrecio"></p>
+      <p class="modal-sinopsis" id="modalSinopsis"></p>
+    </div>
+
+    <div class="visor-pdf">
+      <div class="visor-barra">
+        <h3>Vista previa del libro</h3>
+        <p>Te presentamos una muestra del contenido del libro.</p>
+      </div>
+
+      <iframe id="modalPdf" src="" title="Vista previa del libro en PDF"></iframe>
+    </div>
+
+    <div class="modal-acciones">
+      <a class="modal-whatsapp" id="modalWhatsapp" href="#" target="_blank">
+        Comprar por WhatsApp
+      </a>
+
+      <a class="modal-abrir-pdf" id="modalAbrirPdf" href="#" target="_blank">
+        Abrir muestra en otra pestaña
+      </a>
+    </div>
+  </div>
+</div>
+
 <script src="script.js"></script>
 </body>
 </html>
