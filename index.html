@@ -1,11 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Editora Alamedina | Catálogo Editorial Digital</title>
-  <meta name="description" content="Catálogo editorial digital de Editora Alamedina. Libros en formato PDF listos para adquirir por WhatsApp.">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Catlogo editorial digital de Editora Alamedina. Libros en formato PDF listos para adquirir por WhatsApp.">
+  <meta name="theme-color" content="#23180f">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 
 <body>
@@ -14,31 +15,38 @@
   <nav class="menu">
     <a class="marca" href="#inicio">Editora Alamedina</a>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
-      ☰
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuLista">
+      â˜°
     </button>
 
     <ul id="menuLista">
       <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#proyecto">Proyecto</a></li>
+      <li><a href="#proyecto">Editorial</a></li>
       <li><a href="#destacados">Destacados</a></li>
       <li><a href="#catalogo">Catálogo</a></li>
+      <li><a href="#como-funciona">Compra</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
   </nav>
 
   <section class="hero">
     <div class="hero-contenido">
-      <span class="etiqueta-superior">Catálogo editorial digital</span>
-      <h1>Libros en formato PDF para leer desde cualquier lugar</h1>
+      <span class="etiqueta-superior">Biblioteca digital · Editora Alamedina</span>
+      <h1>Una Biblioteca Digital para leer sobre memorias, educación, didáctica, poesía cuentos y literatura en general</h1>
       <p>
-        Obras creadas con identidad, memoria, educación y literatura.
-        Publicaciones digitales de alta calidad, disponibles para compra directa por WhatsApp.
+        Catálogo digital de obras en formato PDF, organizado para consultar, descubrir
+        y adquirir publicaciones de forma directa por WhatsApp.
       </p>
 
       <div class="acciones-hero">
-        <a href="#catalogo" class="btn btn-principal">Ver catálogo</a>
-        <a href="https://wa.me/50259215127" target="_blank" class="btn btn-secundario">Consultar por WhatsApp</a>
+        <a href="#catalogo" class="btn btn-principal">Ver catlogo</a>
+        <a href="https://wa.me/50256526718" target="_blank" class="btn btn-secundario">Consultar por WhatsApp</a>
+      </div>
+
+      <div class="metricas-hero" aria-label="Resumen del catÃ¡logo">
+        <div><strong id="totalLibrosHero">20</strong><span>libros digitales</span></div>
+        <div><strong>PDF</strong><span>entrega directa</span></div>
+        <div><strong>2026</strong><span>catálogo activo</span></div>
       </div>
     </div>
   </section>
@@ -49,8 +57,8 @@
   <section id="proyecto" class="proyecto">
     <div class="contenedor-dos-columnas">
       <div>
-        <span class="subtitulo">Sobre el proyecto</span>
-        <h2>Una librería digital para preservar, compartir y difundir conocimiento</h2>
+        <span class="subtitulo">Sello editorial</span>
+        <h2>Editora Alamedina</h2>
         <p>
           <strong>Editora Alamedina</strong> reúne obras literarias, educativas, históricas y culturales
           en un catálogo digital accesible, moderno y fácil de consultar. El proyecto nace con el propósito
@@ -58,13 +66,14 @@
           académico, comunitario y artístico.
         </p>
         <p>
-          Todos los libros publicados en esta página se entregan en <strong>formato digital PDF</strong>,
+          Todos los libros publicados en esta pgina se entregan en <strong>formato digital PDF</strong>,
           listos para leerse en computadora, celular o tableta. Esto permite que cada lector pueda adquirir
-          su libro de forma rápida, segura y sin necesidad de envío físico.
+          su libro de forma rápida, segura y sin necesidad de enví­o fí­sico.
         </p>
       </div>
 
-      <div class="tarjeta-pdf">
+      <div class="tarjeta-pdf tarjeta-editorial">
+        <span class="sello-decorativo">EA</span>
         <h3>Formato de entrega</h3>
         <p class="pdf-icono">PDF</p>
         <ul>
@@ -78,7 +87,11 @@
   </section>
 
   <section id="como-funciona" class="pasos">
-    <h2>¿Cómo funciona?</h2>
+    <div class="titulo-seccion">
+      <span class="subtitulo">Compra directa</span>
+      <h2>Cómo funciona?</h2>
+      <p>Una experiencia simple para consultar el catálogo y solicitar tu libro digital.</p>
+    </div>
 
     <div class="grid-pasos">
       <article>
@@ -102,7 +115,7 @@
       <article>
         <span>4</span>
         <h3>Lee</h3>
-        <p>Obtén tu libro digital en PDF y disfrútalo en tus dispositivos.</p>
+        <p>Obtén tu libro digital en PDF y disfrátalo en tus dispositivos.</p>
       </article>
     </div>
   </section>
@@ -111,7 +124,7 @@
     <div class="titulo-seccion">
       <span class="subtitulo">Selección editorial</span>
       <h2>Libros destacados</h2>
-      <p>Una muestra inicial de obras recomendadas dentro del catálogo.</p>
+      <p>Una muestra inicial de obras recomendadas dentro del catlogo.</p>
     </div>
 
     <div class="grid-destacados" id="gridDestacados"></div>
@@ -119,23 +132,30 @@
 
   <section id="catalogo" class="catalogo">
     <div class="titulo-seccion">
-      <span class="subtitulo">Catálogo completo</span>
+      <span class="subtitulo">CatÃ¡logo completo</span>
       <h2>Nuestros libros digitales</h2>
-      <p>Busca por título, autor, año, categoría o palabra clave.</p>
+      <p>Busca por tí­tulo, autor, año, categorí­a o palabra clave.</p>
     </div>
 
-    <div class="herramientas-catalogo">
+    <div class="herramientas-catalogo" aria-label="Herramientas del catÃ¡logo">
       <div class="buscador">
-        <input type="text" id="buscarLibro" placeholder="Buscar por título, autor, año o tema...">
+        <label for="buscarLibro">Buscar libro</label>
+        <input type="text" id="buscarLibro" placeholder="TÃ­tulo, autor, aÃ±o, categorÃ­a o palabra clave...">
       </div>
 
-      <div class="filtros">
-        <button class="filtro activo" data-categoria="Todos">Todos</button>
-        <button class="filtro" data-categoria="Historia">Historia</button>
-        <button class="filtro" data-categoria="Literatura">Literatura</button>
-        <button class="filtro" data-categoria="Educación">Educación</button>
-        <button class="filtro" data-categoria="Poesía">Poesía</button>
-        <button class="filtro" data-categoria="Biografía">Biografía</button>
+      <div class="barra-catalogo">
+        <div class="filtros" id="filtrosCatalogo" aria-label="Filtrar por categorÃ­a"></div>
+
+        <div class="ordenar">
+          <label for="ordenCatalogo">Ordenar</label>
+          <select id="ordenCatalogo">
+            <option value="destacados">Destacados primero</option>
+            <option value="titulo">Tí­tulo A-Z</option>
+            <option value="autor">Autor A-Z</option>
+            <option value="anio">Año reciente</option>
+            <option value="precio">Precio más bajo</option>
+          </select>
+        </div>
       </div>
     </div>
 
@@ -149,19 +169,42 @@
     <h2>Contacto</h2>
     <p>
       Para comprar un libro digital en PDF o solicitar información adicional,
-      escríbenos directamente por WhatsApp.
+      escrí­benos directamente por WhatsApp.
     </p>
 
-    <a href="https://wa.me/50259215127" target="_blank" class="btn-whatsapp">
+    <a href="https://wa.me/50256526718" target="_blank" class="btn-whatsapp">
       Contactar por WhatsApp
     </a>
+  </section>
+
+  <section class="seccion faq" id="faq">
+    <div class="titulo-seccion">
+      <span class="subtitulo">Información útil</span>
+      <h2>Antes de comprar</h2>
+      <p>Verifica que la cuenta para realizar la transfernecia bancaria sea la cuenta sea la correcta.</p>
+    </div>
+
+    <div class="grid-faq">
+      <article>
+        <h3>Entrega digital</h3>
+        <p>Los libros se entregan en formato PDF después de confirmar la transferencia bancaria.</p>
+      </article>
+      <article>
+        <h3>Muestras pendientes</h3>
+        <p>Las vistas previas se activarán conforme subas los PDFs de muestra de cada obra.</p>
+      </article>
+      <article>
+        <h3>CarÃ¡tulas y reseÃ±as</h3>
+        <p>El catÃ¡logo estÃ¡ listo para recibir nuevas carÃ¡tulas y reseÃ±as cuando las tengas.</p>
+      </article>
+    </div>
   </section>
 
 </main>
 
 <footer>
   <p>© 2026 Editora Alamedina. Todos los derechos reservados.</p>
-  <p>Catálogo editorial digital en formato PDF.</p>
+  <p>Catálogo digital de libros.</p>
 </footer>
 
 
@@ -170,7 +213,7 @@
   <div class="modal-overlay" id="modalOverlay"></div>
 
   <div class="modal-contenido lector-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
-    <button class="modal-cerrar" id="modalCerrar" aria-label="Cerrar ventana">×</button>
+    <button class="modal-cerrar" id="modalCerrar" aria-label="Cerrar ventana">Ã—</button>
 
     <div class="modal-encabezado">
       <span class="modal-etiqueta" id="modalEtiqueta"></span>
@@ -194,6 +237,10 @@
         <p>Te presentamos una muestra del contenido del libro.</p>
       </div>
 
+      <div class="aviso-pendiente" id="modalAvisoPendiente">
+        La muestra PDF de este libro estÃ¡ pendiente de carga. Cuando subas el archivo correspondiente,
+        la vista previa aparecerÃ¡ automÃ¡ticamente en este espacio.
+      </div>
       <iframe id="modalPdf" src="" title="Vista previa del libro en PDF"></iframe>
     </div>
 
@@ -203,12 +250,17 @@
       </a>
 
       <a class="modal-abrir-pdf" id="modalAbrirPdf" href="#" target="_blank">
-        Abrir muestra en otra pestaña
+        Abrir muestra en otra pestaÃ±a
       </a>
     </div>
   </div>
 </div>
 
-<script src="script.js"></script>
+<a class="whatsapp-flotante" href="https://wa.me/50256526718" target="_blank" aria-label="Contactar por WhatsApp">
+  WhatsApp
+</a>
+
+<script src="script.js?v=6"></script>
 </body>
 </html>
+

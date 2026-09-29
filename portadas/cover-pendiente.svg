@@ -1,0 +1,23 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 1000" role="img" aria-label="Carátula pendiente">
+  <defs>
+    <linearGradient id="fondo" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fff8eb"/>
+      <stop offset="0.52" stop-color="#ead9b9"/>
+      <stop offset="1" stop-color="#c99b45"/>
+    </linearGradient>
+    <linearGradient id="lomo" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#24180f"/>
+      <stop offset="1" stop-color="#5b3d22"/>
+    </linearGradient>
+  </defs>
+  <rect width="700" height="1000" rx="42" fill="url(#fondo)"/>
+  <rect x="0" y="0" width="88" height="1000" rx="42" fill="url(#lomo)"/>
+  <rect x="126" y="108" width="448" height="1.5" fill="#7d603c" opacity="0.45"/>
+  <rect x="126" y="890" width="448" height="1.5" fill="#7d603c" opacity="0.45"/>
+  <text x="350" y="300" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="86" font-weight="700" fill="#24180f">EA</text>
+  <text x="350" y="390" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="39" font-weight="700" fill="#24180f">Editora Alamedina</text>
+  <text x="350" y="505" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="700" fill="#4c341f">Carátula</text>
+  <text x="350" y="565" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="700" fill="#4c341f">pendiente</text>
+  <text x="350" y="690" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="28" fill="#5b3d22">Archivo listo para reemplazar</text>
+  <text x="350" y="735" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="28" fill="#5b3d22">cuando subas la portada final</text>
+</svg>
