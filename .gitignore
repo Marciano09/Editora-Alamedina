@@ -1,2 +1,6 @@
 ﻿.vscode/
+.opencode/
+.agents/
+.crush/
 _respaldos_imagenes/
+skills-lock.json

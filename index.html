@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Editora Alamedina | Catálogo Editorial Digital</title>
-  <meta name="description" content="Catlogo editorial digital de Editora Alamedina. Libros en formato PDF listos para adquirir por WhatsApp.">
+  <meta name="description" content="Catálogo editorial digital de Editora Alamedina. Libros en formato PDF listos para adquirir por WhatsApp.">
   <meta name="theme-color" content="#23180f">
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 
 <body>
@@ -16,7 +16,7 @@
     <a class="marca" href="#inicio">Editora Alamedina</a>
 
     <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuLista">
-      â˜°
+      ☰
     </button>
 
     <ul id="menuLista">
@@ -32,7 +32,7 @@
   <section class="hero">
     <div class="hero-contenido">
       <span class="etiqueta-superior">Biblioteca digital · Editora Alamedina</span>
-      <h1>Una Biblioteca Digital para leer sobre memorias, educación, didáctica, poesía cuentos y literatura en general</h1>
+      <h1>Un archivo digital para leer memoria, escuela y literatura</h1>
       <p>
         Catálogo digital de obras en formato PDF, organizado para consultar, descubrir
         y adquirir publicaciones de forma directa por WhatsApp.
@@ -128,6 +128,16 @@
     </div>
 
     <div class="grid-destacados" id="gridDestacados"></div>
+  </section>
+
+  <section id="nuevos-mes" class="nuevos-mes" hidden>
+    <div class="titulo-seccion">
+      <span class="subtitulo">Novedades recientes</span>
+      <h2>Añadidos este mes</h2>
+      <p>Libros incorporados recientemente al catálogo digital.</p>
+    </div>
+
+    <div class="grid-nuevos-mes" id="gridNuevosMes"></div>
   </section>
 
   <section id="catalogo" class="catalogo">
@@ -260,7 +270,7 @@
   WhatsApp
 </a>
 
-<script src="script.js?v=6"></script>
+<script src="script.js?v=7"></script>
 </body>
 </html>
 

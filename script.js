@@ -23,6 +23,7 @@ const libros = [
     imagen: "portadas/2.webp",
     muestraPdf: "muestras/libro-02-muestra.pdf",
     categoria: "Literatura",
+    fechaAgregado: "2026-09-30",
     destacado: true,
     etiqueta: "Nuevo"
   },
@@ -119,6 +120,7 @@ const libros = [
     imagen: "portadas/10.webp",
     muestraPdf: "muestras/libro-10-muestra.pdf",
     categoria: "Biografía",
+    fechaAgregado: "2026-09-30",
     destacado: true,
     etiqueta: "Nuevo"
   },
@@ -246,6 +248,8 @@ const libros = [
 
 const contenedor = document.querySelector(".grid-libros");
 const contenedorDestacados = document.getElementById("gridDestacados");
+const contenedorNuevosMes = document.getElementById("gridNuevosMes");
+const seccionNuevosMes = document.getElementById("nuevos-mes");
 const buscador = document.getElementById("buscarLibro");
 const contador = document.getElementById("contadorLibros");
 const filtrosCatalogo = document.getElementById("filtrosCatalogo");
@@ -295,6 +299,24 @@ Portada: ${portada}
 ¿Me pueden indicar cómo realizar la compra?`);
 }
 
+function fechaLocal(fecha) {
+  if (!fecha) return null;
+
+  const partes = String(fecha).split("-").map(Number);
+  if (partes.length !== 3 || partes.some(Number.isNaN)) return null;
+
+  const [anio, mes, dia] = partes;
+  return new Date(anio, mes - 1, dia);
+}
+
+function esLibroDeEsteMes(libro, fechaReferencia = new Date()) {
+  const fecha = fechaLocal(libro.fechaAgregado);
+  if (!fecha) return false;
+
+  return fecha.getFullYear() === fechaReferencia.getFullYear()
+    && fecha.getMonth() === fechaReferencia.getMonth();
+}
+
 function crearFiltros() {
   const categorias = ["Todos", ...new Set(libros.map(libro => libro.categoria))].sort((a, b) => {
     if (a === "Todos") return -1;
@@ -321,10 +343,12 @@ function crearFiltros() {
 function crearTarjetaLibro(libro, index) {
   const mensaje = mensajeWhatsApp(libro);
   const pendiente = libro.etiqueta === "Pendiente";
+  const nuevoEsteMes = esLibroDeEsteMes(libro);
+  const etiquetaTarjeta = nuevoEsteMes ? "Nuevo este mes" : libro.etiqueta;
 
   return `
     <article class="libro" onclick="abrirModalLibro(libros[${index}])" tabindex="0" role="button" aria-label="Ver ficha del libro ${libro.titulo}">
-      ${libro.etiqueta ? `<span class="badge">${libro.etiqueta}</span>` : ""}
+      ${etiquetaTarjeta ? `<span class="badge ${nuevoEsteMes ? "badge-mes" : ""}">${etiquetaTarjeta}</span>` : ""}
       <div class="portada-marco">
         <img src="${libro.imagen}" alt="Portada del libro ${libro.titulo}" onerror="this.onerror=null; this.src='${IMAGEN_PENDIENTE}'; this.closest('.portada-marco').classList.add('portada-pendiente');">
         ${pendiente ? `<span class="estado-pendiente">Carátula pendiente</span>` : ""}
@@ -377,6 +401,23 @@ function mostrarDestacados() {
   contenedorDestacados.innerHTML = destacados.map(libro => crearTarjetaLibro(libro, libros.indexOf(libro))).join("");
 }
 
+function mostrarNuevosMes() {
+  if (!seccionNuevosMes || !contenedorNuevosMes) return;
+
+  const nuevosMes = libros
+    .filter(libro => esLibroDeEsteMes(libro))
+    .sort((a, b) => fechaLocal(b.fechaAgregado) - fechaLocal(a.fechaAgregado));
+
+  if (nuevosMes.length === 0) {
+    seccionNuevosMes.hidden = true;
+    contenedorNuevosMes.innerHTML = "";
+    return;
+  }
+
+  seccionNuevosMes.hidden = false;
+  contenedorNuevosMes.innerHTML = nuevosMes.map(libro => crearTarjetaLibro(libro, libros.indexOf(libro))).join("");
+}
+
 function aplicarFiltros() {
   const texto = normalizar(buscador.value);
 
@@ -403,6 +444,7 @@ function aplicarFiltros() {
 
 crearFiltros();
 mostrarDestacados();
+mostrarNuevosMes();
 mostrarLibros(ordenarLibros(libros));
 if (totalLibrosHero) totalLibrosHero.textContent = libros.length;
 
@@ -502,5 +544,4 @@ document.addEventListener("keydown", (evento) => {
     tarjeta.click();
   }
 });
-
 
